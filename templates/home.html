@@ -1,0 +1,18 @@
+{% extends './layout/main.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <form action="blog/search" method="post">
+        {% csrf_token %}
+        <label for="article">Article</label>
+        <input type="text" name="article" id="article">
+        <input type="submit" value="search">
+    </form>
+    <a href="{% url 'about' %}">About</a>
+    <br>
+    <a href="{% url 'post' 1 %}">The post one</a>
+    <br>
+    <a href="{% url 'postname' 'Win Myint Kyaw' %}">The article one</a><br>
+    <a href="{% url 'add_post' %}">Add post</a>
+
+{% endblock %}
